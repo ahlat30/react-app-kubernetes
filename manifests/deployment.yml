@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: localhost5000myreactapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: localhost5000myreactapp
+  template:
+    metadata:
+      labels:
+        app: localhost5000myreactapp 
+    spec:
+      containers:
+        - name: localhost5000myreactapp 
+          image: project320240526235927.azurecr.io/localhost5000myreactapp
+          ports:
+          - containerPort: 80
